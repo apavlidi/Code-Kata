@@ -1,4 +1,4 @@
-package leapYear;
+package org.apavlidi.leapyear;
 
 
 import org.testng.annotations.Test;

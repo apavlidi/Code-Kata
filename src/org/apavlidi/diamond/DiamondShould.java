@@ -1,4 +1,4 @@
-package Diamond;
+package org.apavlidi.diamond;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Ignore;

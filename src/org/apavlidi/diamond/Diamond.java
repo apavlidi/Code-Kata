@@ -1,4 +1,4 @@
-package Diamond;
+package org.apavlidi.diamond;
 
 public class Diamond {
 
@@ -8,18 +8,18 @@ public class Diamond {
         int charPosition = (int) character - 64;
         int currentCharacterPos = 0;
         int spacesInside = 1;
-        String diamondString = "";
+        StringBuilder diamondString = new StringBuilder();
 
         for (int i = 0; i < charPosition; i++) {
             currentCharacterPos += 1;
-            diamondString += retrieveSpaces(currentCharacterPos, charPosition);
+            diamondString.append(retrieveSpaces(currentCharacterPos, charPosition));
 
             if (isNotFirstLetter(i)) {
-                diamondString += getLine(spacesInside, i);
+                diamondString.append(getLine(spacesInside, i));
                 spacesInside += 2;
             } else {
-                diamondString += getCharacter(CHAR_POSITION_A + i);
-                diamondString += "\n";
+                diamondString.append(getCharacter(CHAR_POSITION_A + i));
+                diamondString.append("\n");
             }
         }
 
@@ -27,17 +27,17 @@ public class Diamond {
         spacesInside -= 4;
         for (int i = charPosition - 2; i > -1; i--) {
             currentCharacterPos--;
-            diamondString += retrieveSpaces(currentCharacterPos, charPosition);
+            diamondString.append(retrieveSpaces(currentCharacterPos, charPosition));
 
             if (isNotFirstLetter(i)) {
-                diamondString += getLine(spacesInside, i);
+                diamondString.append(getLine(spacesInside, i));
                 spacesInside -= 2;
             } else {
-                diamondString += getCharacter(CHAR_POSITION_A + i);
+                diamondString.append(getCharacter(CHAR_POSITION_A + i));
             }
         }
 
-        return diamondString;
+        return diamondString.toString();
     }
 
     private String getLine(int spacesInside, int index) {
@@ -56,11 +56,12 @@ public class Diamond {
     }
 
     private String retrieveSpaces(int startPoint, int length) {
-        String spaces = "";
+        StringBuilder spaces = new StringBuilder();
+
         for (int j = startPoint; j < length; j++) {
-            spaces += " ";
+            spaces.append(" ");
         }
-        return spaces;
+        return spaces.toString();
     }
 
     private String getCharacter(int charPosition) {

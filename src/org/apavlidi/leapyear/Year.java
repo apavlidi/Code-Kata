@@ -1,6 +1,7 @@
-package leapYear;
+package org.apavlidi.leapyear;
 
 public class Year {
+
     private int year;
 
     public Year(int year) {

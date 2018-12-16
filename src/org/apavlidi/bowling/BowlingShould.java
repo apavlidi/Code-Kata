@@ -1,4 +1,4 @@
-package Bowling;
+package org.apavlidi.bowling;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

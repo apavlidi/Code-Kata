@@ -1,4 +1,4 @@
-package Bowling;
+package org.apavlidi.bowling;
 
 public class Bowling {
 
