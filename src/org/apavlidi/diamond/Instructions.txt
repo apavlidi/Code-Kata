@@ -8,7 +8,7 @@ For example: print-diamond ‘A’ prints
 
 A
 
-For example: print-diamond ‘C’ prints
+For example: print-diamond ‘Β’ prints
 
  A
 B B
