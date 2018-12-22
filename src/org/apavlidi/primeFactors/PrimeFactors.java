@@ -4,18 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeFactors {
-    public static List<Integer> generate(int n) {
-        List<Integer> primes = new ArrayList<>();
 
-        int candidate = 2;
-        while (n > 1) {
-            while (n % candidate == 0) {
-                primes.add(candidate);
-                n /= candidate;
+
+    public static List<Integer> generate(int number) {
+        ArrayList<Integer> primeFactors = new ArrayList<>();
+
+        for (int canditate = 2; number > 1; canditate++)
+            for (; number % canditate == 0; number /= canditate) {
+                primeFactors.add(canditate);
             }
-            candidate++;
-        }
-        return primes;
-    }
 
+        return primeFactors;
+    }
 }
