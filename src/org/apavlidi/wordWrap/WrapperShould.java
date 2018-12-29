@@ -9,7 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class WrapperShould {
 
     @Test
-    public void emptyString() throws Exception {
+    public void emptyString() {
         assertThat(Wrapper.wrap("", 1), equalTo(""));
     }
 
