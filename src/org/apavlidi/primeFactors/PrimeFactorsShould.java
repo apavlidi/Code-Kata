@@ -1,62 +1,58 @@
 package org.apavlidi.primeFactors;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.apavlidi.primeFactors.PrimeFactors.generate;
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrimeFactorsShould {
 
-
-    private List<Integer> list(int... ints) {
-        List<Integer> list = new ArrayList<>();
-        for (int i : ints)
-            list.add(i);
-        return list;
-    }
-
     @Test
     public void testOne() {
-        assertEquals(list(), generate(1));
+        assertEquals(list(), PrimeFactors.generate(1));
     }
-
 
     @Test
     public void testTwo() {
-        assertEquals(list(2), generate(2));
+        assertEquals(list(2), PrimeFactors.generate(2));
     }
 
     @Test
     public void testThree() {
-        assertEquals(list(3), generate(3));
+        assertEquals(list(3), PrimeFactors.generate(3));
     }
 
     @Test
     public void testFour() {
-        assertEquals(list(2, 2), generate(4));
+        assertEquals(list(2, 2), PrimeFactors.generate(4));
     }
 
     @Test
-    public void testSix() {
-        assertEquals(list(2, 3), generate(6));
+    public void testSixth() {
+        assertEquals(list(2, 3), PrimeFactors.generate(6));
     }
 
     @Test
     public void testEight() {
-        assertEquals(list(2, 2, 2), generate(8));
+        assertEquals(list(2, 2, 2), PrimeFactors.generate(8));
     }
 
     @Test
     public void testNine() {
-        assertEquals(list(3, 3), generate(9));
+        assertEquals(list(3, 3), PrimeFactors.generate(9));
     }
 
-    @Test
-    public void testSixty() {
-        assertEquals(list(2, 2, 3, 5), generate(60));
+
+    private List<Integer> list(int... factorNumbers) {
+        ArrayList<Integer> listOfNumbers = new ArrayList<>();
+
+        for (int factorNumber : factorNumbers) {
+            listOfNumbers.add(factorNumber);
+        }
+
+        return listOfNumbers;
     }
 
 }
