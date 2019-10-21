@@ -1,39 +1,29 @@
 package org.apavlidi.fizzBuzz;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class FizzBuzzShould {
 
     @Test
-    public void return_fizz_when_number_is_3() {
-        assertEquals(FizzBuzz.convert(3), "Fizz");
+    public void is_Fizz_if_divisible_by_3() {
+        assertEquals(FizzBuzz.printNumber(9), FizzBuzz.FIZZ);
     }
 
     @Test
-    public void return_fizz_when_number_is_6() {
-        assertEquals(FizzBuzz.convert(6), "Fizz");
+    public void is_Buzz_if_divisible_by_5() {
+        assertEquals(FizzBuzz.printNumber(10), FizzBuzz.BUZZ);
     }
 
     @Test
-    public void return_buzz_when_number_is_5() {
-        assertEquals(FizzBuzz.convert(5), "Buzz");
+    public void is_FizzBuzz_if_divisible_by_3_and_5() {
+        assertEquals(FizzBuzz.printNumber(15), FizzBuzz.FIZZ_BUZZ);
     }
 
     @Test
-    public void return_buzz_when_number_is_10() {
-        assertEquals(FizzBuzz.convert(10), "Buzz");
-    }
-
-    @Test
-    public void return_same_number_when_number_is_not_divisible_by_3_or_5() {
-        assertEquals(FizzBuzz.convert(11), "11");
-    }
-
-    @Test
-    public void return_fizzBuzz_when_number_is_divisible_by_3_and_5() {
-        assertEquals(FizzBuzz.convert(15), "FizzBuzz");
+    public void is_number_if_not_divisible_by_3_or_5_or_both() {
+        assertEquals(FizzBuzz.printNumber(11), String.valueOf(11));
     }
 
 }
