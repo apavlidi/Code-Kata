@@ -9,14 +9,14 @@ public class Year {
     }
 
     public boolean isLeapYear() {
-        return isDevidedBy(4) && !(isNotDevidedBy(100) && isDevidedBy(400));
+        return isDividedBy(4) && !(isDividedBy(100) && isNotDividedBy(400));
     }
 
-    private boolean isNotDevidedBy(int number) {
+    private boolean isNotDividedBy(int number) {
         return year % number != 0;
     }
 
-    private boolean isDevidedBy(int number) {
+    private boolean isDividedBy(int number) {
         return year % number == 0;
     }
 }
